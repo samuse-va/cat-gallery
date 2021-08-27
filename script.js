@@ -1,25 +1,29 @@
-let offset = 0;
 const sliderLine = document.querySelector('.slider-line');
 let buttonNext = document.querySelector('.slider-next');
 let buttonPrev = document.querySelector('.slider-prev');
+let slides = document.querySelectorAll('.slide');
+
+let offset = 0;
 
 buttonNext.addEventListener('click', function() {
-  offset += 256;
-  if (offset > 636) {
-    offset = 748;
+  offset += (slides[0].width + 10);
+  if (offset > (slides.length - 5) * (slides[0].width + 10)) {
     buttonNext.classList.add('hidden');
     buttonPrev.onclick = function () {
       buttonNext.classList.remove('hidden');
     }
   }
-  sliderLine.style.left = -offset + 'px';
-
+ sliderLine.style.left = -offset + 'px';
 });
 
 buttonPrev.addEventListener('click', function() {
-  offset -= 256;
-  if (offset < 128) {
+  offset -= (slides[0].width + 10);
+  if (offset < (slides[0].width + 10)) {
     offset = 0;
+    buttonPrev.classList.add('hidden');
+    buttonNext.onclick = function () {
+      buttonPrev.classList.remove('hidden');
+    }
   }
   sliderLine.style.left = -offset + 'px';
 });

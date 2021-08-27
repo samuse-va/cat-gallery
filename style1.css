@@ -1,0 +1,58 @@
+html, body {
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+  }
+  
+  img {
+    width: 256px;
+    height: auto;
+    padding: 10px;
+  }
+  
+  button {
+      background: none;
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: .9rem;
+      margin-top: 10px;
+  }
+  
+  button:hover {
+      background: orangered;
+  }
+  
+  button:active {
+      background: #000;
+      color: #fff;
+  }
+  
+  .slider {
+      border: 1px solid black;
+      border-radius: 4px;
+      width: 276px;
+      height: 341px;
+      overflow: hidden;
+  }
+  
+  .slider-line {
+    height: 341px;
+    width: 276px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .slider-next {
+    position: absolute;
+    left:  250px;
+  }
